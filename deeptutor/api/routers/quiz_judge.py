@@ -71,6 +71,19 @@ _JUDGE_SYSTEM_PROMPTS = {
         "- Звертайся саме до цієї відповіді, без загальних лекцій.\n"
         "- Відповідай українською."
     ),
+    "vi": (
+        "Bạn là một trợ giảng nghiêm túc nhưng luôn khuyến khích người học, "
+        "đang chấm câu trả lời của họ cho một câu hỏi trắc nghiệm. Dựa vào câu hỏi, "
+        "đáp án tham khảo và phần giải thích để đưa ra nhận định và phản hồi sát thực tế.\n\n"
+        "Yêu cầu:\n"
+        "- Mở đầu bằng một dòng nêu kết luận: ✅ Đúng / ⚠️ Đúng một phần / ❌ Sai "
+        "và nêu ngắn gọn căn cứ chính.\n"
+        "- Sau đó liệt kê theo từng ý: phần nào làm đúng, phần nào sai hoặc thiếu, "
+        "và nên cải thiện ra sao.\n"
+        "- Nếu câu hỏi có nhiều đáp án hợp lý, hãy ghi nhận phần đúng của người học.\n"
+        "- Trực tiếp nhận xét vào câu trả lời này, đừng giảng chung chung.\n"
+        "- Trả lời bằng tiếng Việt."
+    ),
 }
 
 # The set of languages the judge can speak IS the set of system prompts it has.
@@ -248,7 +261,7 @@ async def websocket_quiz_judge(websocket: WebSocket):
             ] | null,
             "user_answer_image": str | null,  # legacy single-image form
             "image_filename": str | null,     # legacy filename for the above
-            "language": "zh" | "en" | "de" | "uk",
+            "language": "zh" | "en" | "de" | "uk" | "vi",
         }
 
     Server → Client (streaming):

@@ -25,6 +25,7 @@ export type ResponseLanguage =
   | "ar"
   | "pl"
   | "uk"
+  | "vi"
   | "ms";
 
 const SUPPORTED_RESPONSE_LANGUAGE_CODES: readonly ResponseLanguage[] = [
@@ -42,6 +43,7 @@ const SUPPORTED_RESPONSE_LANGUAGE_CODES: readonly ResponseLanguage[] = [
   "ar",
   "pl",
   "uk",
+  "vi",
   "ms",
 ];
 
@@ -65,6 +67,8 @@ const RESPONSE_LANGUAGE_ALIASES: Record<string, ResponseLanguage> = {
   arabic: "ar",
   polish: "pl",
   ukrainian: "uk",
+  vietnamese: "vi",
+  "tieng viet": "vi",
   malay: "ms",
   "bahasa melayu": "ms",
   "zh-cn": "zh",

@@ -8,6 +8,7 @@ export function getLocale(lang: Language): string {
   if (lang === "de") return "de-DE";
   if (lang === "uk") return "uk-UA";
   if (lang === "pl") return "pl-PL";
+  if (lang === "vi") return "vi-VN";
   return "en-US";
 }
 

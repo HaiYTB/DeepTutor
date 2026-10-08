@@ -11427,10 +11427,7 @@ export interface components {
     };
     /** Body_admin_import_users_api_auth_users_import_post */
     readonly Body_admin_import_users_api_auth_users_import_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** Body_create_knowledge_base_api_knowledge_bases_post */
@@ -11474,10 +11471,7 @@ export interface components {
     };
     /** Body_import_docx_api_documents_import_docx_post */
     readonly Body_import_docx_api_documents_import_docx_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** Body_import_preview_api_question_notebook_practice_import_preview_post */
@@ -11487,10 +11481,7 @@ export interface components {
        * @default
        */
       readonly course_id: string;
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
       /**
        * Target
@@ -11501,17 +11492,13 @@ export interface components {
     };
     /** Body_import_visualizer_api_visualizers_import_post */
     readonly Body_import_visualizer_api_visualizers_import_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** Body_library_add */
     readonly Body_library_add: {
       /**
        * File
-       * Format: binary
        * @description Raw file bytes
        */
       readonly file: string;
@@ -11528,10 +11515,7 @@ export interface components {
     };
     /** Body_preview_office_upload_api_file_preview_pdf_post */
     readonly Body_preview_office_upload_api_file_preview_pdf_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** Body_reindex_knowledge_base_api_knowledge_bases__kb_name__reindex_post */
@@ -11554,20 +11538,14 @@ export interface components {
     };
     /** Body_speech_to_text_api_voice_stt_post */
     readonly Body_speech_to_text_api_voice_stt_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
       /** Language */
       readonly language?: string | null;
     };
     /** Body_upload_avatar_api_auth_profile_avatar_put */
     readonly Body_upload_avatar_api_auth_profile_avatar_put: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** Body_upload_files_api_knowledge_bases__kb_name__upload_post */
@@ -11588,10 +11566,7 @@ export interface components {
     };
     /** Body_upload_material_api_reading_materials_post */
     readonly Body_upload_material_api_reading_materials_post: {
-      /**
-       * File
-       * Format: binary
-       */
+      /** File */
       readonly file: string;
     };
     /** BookmarkInfo */
@@ -13220,7 +13195,7 @@ export interface components {
        * Language
        * @enum {string}
        */
-      readonly language: "en" | "zh" | "fr" | "de" | "uk" | "pl";
+      readonly language: "en" | "zh" | "fr" | "de" | "uk" | "pl" | "vi";
     };
     /** LearnerOverrideRequest */
     readonly LearnerOverrideRequest: {
@@ -16383,7 +16358,8 @@ export interface components {
       /** Code Block Wrap Long Lines */
       readonly code_block_wrap_long_lines?: boolean | null;
       /** Language */
-      readonly language?: ("en" | "zh" | "fr" | "de" | "uk" | "pl") | null;
+      readonly language?:
+        ("en" | "zh" | "fr" | "de" | "uk" | "pl" | "vi") | null;
       /** Response Language */
       readonly response_language?:
         | (
@@ -16401,6 +16377,7 @@ export interface components {
             | "ar"
             | "pl"
             | "uk"
+            | "vi"
             | "ms"
           )
         | null;

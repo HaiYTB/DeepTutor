@@ -19,7 +19,7 @@ from deeptutor.response_languages import SUPPORTED_RESPONSE_LANGUAGES
 from deeptutor.services.path_service import get_path_service
 from deeptutor.tools.builtin import USER_TOGGLEABLE_TOOL_NAMES
 
-UiLanguage = Literal["en", "zh", "fr", "de", "uk", "pl"]
+UiLanguage = Literal["en", "zh", "fr", "de", "uk", "pl", "vi"]
 
 DEFAULT_UI_SETTINGS: dict[str, Any] = {
     # "snow" is the pure-white neutral theme, shown as "Default" in the UI.
@@ -50,6 +50,9 @@ _RESPONSE_LANGUAGE_ALIASES: dict[str, str] = {
     "italian": "it",
     "arabic": "ar",
     "polish": "pl",
+    "vietnamese": "vi",
+    "tieng viet": "vi",
+    "tiếng việt": "vi",
     "malay": "ms",
     "bahasa melayu": "ms",
 }
@@ -87,6 +90,7 @@ def _normalize_language(language: Any, default: str = "en") -> str:
     - de/german/deutsch -> de
     - uk/ukrainian/ua -> uk
     - pl/polish/polski -> pl
+    - vi/vietnamese -> vi
 
     An unknown code falls back to ``default`` rather than raising, so this is
     also the gate that decides which languages exist at all: a locale shipped
@@ -110,6 +114,8 @@ def _normalize_language(language: Any, default: str = "en") -> str:
             return "uk"
         if s in {"polish", "polski"} or base == "pl":
             return "pl"
+        if s in {"vietnamese", "tieng viet", "tieng-viet", "tiếng việt"} or base == "vi":
+            return "vi"
 
     # Fall back to default
     if isinstance(default, str):
